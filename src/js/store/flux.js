@@ -7,7 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
         actions: {
             loadSomeData: ()=>{
-                getPlanets().then(data => setStore({"foo":data.results}))
+                getPlanets().then(data => setStore({"planets":data.results}))
+                getPeople().then(data => setStore({"people":data.results}))
             }
         }
     }

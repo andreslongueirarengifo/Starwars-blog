@@ -5,7 +5,8 @@ import { Context } from "../store/appContext";
 
 export const Home = () => {
     const { store, actions } = useContext(Context)
-    console.log(store.foo)
+    console.log(store.planets)
+    console.log(store.people)
     return(
         <div className="text-center mt-5">
 		<h1>Hello Rigo!</h1>
