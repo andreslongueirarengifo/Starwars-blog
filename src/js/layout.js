@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import NavbarComponent from "./components/navbar.js";
 
 import injectContext from "./store/appContext";
 
@@ -15,6 +16,7 @@ const Layout = () => {
 	return (
 		<div>
 			<BrowserRouter>
+			<NavbarComponent/>
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="*" element={<h1>Not found!</h1>} />

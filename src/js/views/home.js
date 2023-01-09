@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/index.css";
+import CardComponent from "../components/card";
+import SliderCardComponent from "../components/slidercard";
 import { Context } from "../store/appContext";
 
 export const Home = () => {
@@ -8,15 +10,13 @@ export const Home = () => {
     console.log(store.planets)
     console.log(store.people)
     return(
-        <div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
+		<>
+			<h2>Characters</h2>
+			<SliderCardComponent img={rigoImage}/>
+			<h2>Planets</h2>
+			<SliderCardComponent img={rigoImage}/>
+		</>
+
     )
     };
 //getPlanets().then(data => console.log(data.results))
