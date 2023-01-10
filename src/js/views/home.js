@@ -1,21 +1,33 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/index.css";
-import CardComponent from "../components/card";
-import SliderCardComponent from "../components/slidercard";
+
+
+import SliderPeopleComponent from "../components/people/slider-people";
+import SliderPlanetsComponent from "../components/planets/slider-planet";
+
 import { Context } from "../store/appContext";
+import { getPlanets } from "../services/planets.services.js";
+import { getPeople } from "../services/people.services.js";
+
+
 
 export const Home = () => {
     const { store, actions } = useContext(Context)
-    console.log(store.planets)
-    console.log(store.people)
+    const [people, setPeople] = useState([])
+    const [planets, setPlanet] = useState([])
+
+  useEffect(()=>{
+    getPlanets().then(data => {setPlanet(data.results)})
+    getPeople().then(data => {setPeople(data.results)})
+  },[]);
     return(
-		<>
-			<h2>Characters</h2>
-			<SliderCardComponent img={rigoImage}/>
-			<h2>Planets</h2>
-			<SliderCardComponent img={rigoImage}/>
-		</>
+		<div className="text-center">
+			<h2 className="text-danger">Characters</h2>
+			<SliderPeopleComponent img={rigoImage} obj = {people}/>
+			<h2 className="text-danger">Planets</h2>
+			<SliderPlanetsComponent img={rigoImage} obj = {planets}/>
+		</div>
 
     )
     };

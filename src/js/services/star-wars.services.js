@@ -1,9 +1,6 @@
-const API_URI = "https://www.swapi.tech/api/people/"
-
-
-export const getPeople = async () => {
+export const getDataCard  = async (API_URI_CHAR) => {
     try {
-        const response = await fetch(API_URI);
+        const response = await fetch(API_URI_CHAR);
         if (!response.ok) {
           throw new Error(
             `This is an HTTP error: The status is ${response.status}`
@@ -14,5 +11,4 @@ export const getPeople = async () => {
       } catch (err) {
         console.log(err.message);
       }
-}
-
+  }
