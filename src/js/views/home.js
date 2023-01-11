@@ -22,12 +22,12 @@ export const Home = () => {
     getPeople().then(data => {setPeople(data.results)})
   },[]);
     return(
-		<div className="text-center">
-			<h2 className="text-danger">Characters</h2>
+		<>
+			<h2 className="text-danger m-5 mb-0 mt-0">Characters</h2>
 			<SliderPeopleComponent img={rigoImage} obj = {people}/>
-			<h2 className="text-danger">Planets</h2>
+			<h2 className="text-danger m-5 mb-0 mt-0">Planets</h2>
 			<SliderPlanetsComponent img={rigoImage} obj = {planets}/>
-		</div>
+		</>
 
     )
     };

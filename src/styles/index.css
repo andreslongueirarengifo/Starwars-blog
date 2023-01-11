@@ -1,14 +1,23 @@
 .slider{
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
 }
 
 .slick-slide > div {
-    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    margin: auto;
 }
 
 .slick-list {
     margin: 0 10px;
+}
+
+.detail{
+    margin-right: 0;
+    margin-left: 0;
+    max-width: 100%;
 }
 
 .arrow{

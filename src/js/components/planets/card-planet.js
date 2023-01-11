@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import { getDataCard } from '../../services/star-wars.services';
+import { Context } from '../../store/appContext';
 
 
 
 function CardPlanetComponent(prop) {
 
   const [data, setData] = useState([])
+  const { store, actions } = useContext(Context)
 
 /*
   useEffect(()=>{
@@ -21,15 +23,14 @@ function CardPlanetComponent(prop) {
       <Card.Body>
         <Card.Title>{prop.obj.name}</Card.Title>
         <Card.Text>
-            <p>Gender: a</p>
-            <p>Hair Color: a</p>
-            <p>Eye-Color: a</p>
+            <p>Population: a</p>
+            <p>Terrain: a</p>
         </Card.Text>
         <div className='d-flex justify-content-between'>
             <Link to={"/planetdetail/" + 1}>
-                <Button variant="primary">Learn more!</Button>
+                <Button variant="outline-primary">Learn more!</Button>
             </Link>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="outline-warning" onClick={() =>{actions.addFavorite(prop.obj.name)}}><i className="fa-regular fa-heart"></i></Button>
         </div>
       </Card.Body>
     </Card>

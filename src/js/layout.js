@@ -9,8 +9,8 @@ import "slick-carousel/slick/slick-theme.css";
 import injectContext from "./store/appContext";
 
 import { Home } from "./views/home.js";
-import { PlanetDetail } from "./views/planet-detail.js";
-import { CharacterDetail } from "./views/character-detail.js";
+import { PlanetDetail } from "./views/details/planet-detail";
+import { CharacterDetail } from "./views/details/character-detail";
 
 
 
