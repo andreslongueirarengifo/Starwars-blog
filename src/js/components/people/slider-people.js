@@ -13,6 +13,8 @@ function SliderPeopleComponent(prop){
             nextArrow: <SampleNextArrow />,
             prevArrow: <SamplePrevArrow />
         };
+
+        
     return(
         <div className="slider">
         <Slider {...settings}>
