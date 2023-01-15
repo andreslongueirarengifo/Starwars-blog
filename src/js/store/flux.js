@@ -4,13 +4,18 @@ const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
             fav:[],
-            data:[]
+            dataCharacter:[],
+            dataPlanet:[]
         },
         actions: {
             
-            loadData : (data)=>{
+            loadDataCharacter : (data)=>{
                 const store = getStore()
-                setStore({data:store.data.concat(data)})
+                setStore({dataCharacter:store.dataCharacter.concat(data)})
+            },
+            loadDataPlanet : (data)=>{
+                const store = getStore()
+                setStore({dataPlanet:store.dataPlanet.concat(data)})
             },
             addFavorite:(newFav)=>{
                 const store = getStore()

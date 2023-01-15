@@ -17,7 +17,7 @@ function CardPeopleComponent(prop) {
   useEffect(()=>{
     getDataCard(prop.obj.url).then(data=>{setData(data.result.properties)
     setLoading(false)
-    actions.loadData(data)})
+    actions.loadDataCharacter(data)})
   },[])
 
 
@@ -52,7 +52,7 @@ function CardPeopleComponent(prop) {
             <p>Eye-Color: {data.eye_color}</p>
         </Card.Text>
         <div className='d-flex justify-content-between'>
-        <Link to={"/characterdetail/" + 1}>
+        <Link to={"/characterdetail/" + prop.index}>
           <Button variant="outline-primary" obj={data}>Learn more!</Button>
         </Link>
         <Button variant="outline-warning" onClick={() =>{actions.addFavorite(prop.obj.name)}}><i className="fa-regular fa-heart"></i></Button>

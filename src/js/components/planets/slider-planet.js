@@ -20,7 +20,7 @@ function SliderPlanetsComponent(prop){
         {prop.obj.map((item,i)=>{
                 return(
                     <div key ={i}>
-                        <CardPlanetComponent img={prop.img} obj={item}/>
+                        <CardPlanetComponent img={prop.img} obj={item} index={i+1}/>
                     </div>
                 )
             })

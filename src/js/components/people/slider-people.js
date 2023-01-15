@@ -21,7 +21,7 @@ function SliderPeopleComponent(prop){
         {prop.obj.map((item,i)=>{
                 return(
                     <div key ={i}>
-                        <CardPeopleComponent img={prop.img} obj={item}/>
+                        <CardPeopleComponent img={prop.img} obj={item} index={i+1}/>
                     </div>
                 )
             })

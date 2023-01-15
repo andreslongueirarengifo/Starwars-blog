@@ -17,7 +17,8 @@ function CardPlanetComponent(prop) {
 
   useEffect(()=>{
     getDataCard(prop.obj.url).then(data=>{setData(data.result.properties)
-    setLoading(false)})
+    setLoading(false)
+    actions.loadDataPlanet(data)})
   },[])
 
   if(loading)return(
@@ -49,7 +50,7 @@ function CardPlanetComponent(prop) {
             <p>Terrain: {data.terrain}</p>
         </Card.Text>
         <div className='d-flex justify-content-between'>
-            <Link to={"/planetdetail/" + 1}>
+            <Link to={"/planetdetail/" + prop.index}>
                 <Button variant="outline-primary" obj={data}>Learn more!</Button>
             </Link>
             <Button variant="outline-warning" onClick={() =>{actions.addFavorite(prop.obj.name)}}><i className="fa-regular fa-heart"></i></Button>
