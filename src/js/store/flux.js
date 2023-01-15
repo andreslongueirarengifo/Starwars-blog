@@ -20,6 +20,11 @@ const getState = ({ getStore, getActions, setStore }) => {
             addFavorite:(newFav)=>{
                 const store = getStore()
                 setStore({fav:[...new Set([...store.fav, newFav])]})
+            },
+            deleteFavorite:(i)=>{
+                const store = getStore()
+                store.fav.splice(i, 1)
+                setStore([...store.favorites])
             }
         }
     }
