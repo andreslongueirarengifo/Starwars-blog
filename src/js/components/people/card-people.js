@@ -23,7 +23,7 @@ function CardPeopleComponent(prop) {
 
   if(loading)return(
     <>
-    <Card>
+    <Card className='card-width'>
         <Card.Img variant="top" src={prop.img} />
         <Card.Body>
           <Placeholder as={Card.Title} animation="glow">
@@ -42,7 +42,7 @@ function CardPeopleComponent(prop) {
 
 
   return (
-    <Card>
+    <Card className='card-width'>
       <Card.Img variant="top" src={prop.img} />
       <Card.Body>
         <Card.Title>{prop.obj.name}</Card.Title>

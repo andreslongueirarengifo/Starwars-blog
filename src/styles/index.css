@@ -24,3 +24,7 @@
     display: "block"; 
     background: "red"; 
 }
+
+.card-width{
+    width: 20rem;
+}

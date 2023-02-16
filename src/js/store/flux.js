@@ -24,7 +24,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             deleteFavorite:(i)=>{
                 const store = getStore()
                 store.fav.splice(i, 1)
-                setStore([...store.favorites])
+                setStore({fav:[...store.fav]})
             }
         }
     }
