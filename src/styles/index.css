@@ -1,6 +1,11 @@
 .slider{
+    display: grid;
+    gap: var(--size-3);
+    grid-auto-flow: column;
+    grid-auto-columns: 21%;
     width: 95%;
     margin: 0 auto;
+    overflow-x: auto;
 }
 
 .slick-slide > div {
